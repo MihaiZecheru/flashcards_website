@@ -1,0 +1,84 @@
+body {
+    font-family: 'Langar', cursive;
+    background-image: url("world.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    /*color: #434d54;*/
+}
+
+.cards-container {
+    height: 400px;
+    width: 700px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 275px;
+}
+
+.button {
+    font-weight: bold;
+    font-size: 1.8em;
+    background-color: #434d54;
+    color: #FFFFFF;
+    width: 250px;
+    height: 40px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.button:hover {
+    transform: scale(1.2);
+}
+
+.card {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.8em;
+    color: orange;
+    border-radius: 25px;
+    text-align: center;
+    width: 190px;
+    height: 190px;
+    box-sizing: border-box;
+    background: bisque;
+    margin: 5px;
+    transform-style: preserve-3d;
+    transition: all .55s linear;
+}
+
+.front,
+.back {
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.front {
+    z-index: 2;
+}
+
+.back {
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+.card:active { /* .card:active means while user holds click down. can be set to .card:hover */
+    transform: rotateY(180deg);
+    color: bisque;
+    background: orange;
+}
